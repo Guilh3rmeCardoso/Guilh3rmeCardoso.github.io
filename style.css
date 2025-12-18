@@ -87,7 +87,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    margin-bottom: 30px; /* Adiciona espaço para o GIF abaixo */
+    margin-bottom: 30px; 
 }
 
 .play-button:hover {
@@ -101,12 +101,37 @@ body {
 }
 
 .hero-gif {
-    width: 150px; /* Tamanho do GIF */
+    width: 150px; 
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
-/* FIM NOVO ESTILO */
+/* FIM NOVO ESTILO GIF CABEÇALHO */
+
+
+/* Estilo do Botão de Compartilhamento */
+.share-button {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block; 
+    max-width: 300px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.share-button:hover {
+    opacity: 0.9;
+}
+/* FIM Estilo do Botão de Compartilhamento */
 
 
 /* Year Section - Anos */
@@ -117,7 +142,7 @@ body {
 
 .year-section h2 {
     font-size: 2.5em;
-    margin-bottom: 40px;
+    margin-bottom: 10px; /* Reduzido o margin-bottom para deixar espaço para o botão de compartilhamento */
     text-align: center;
     color: var(--primary-color);
 }
@@ -500,6 +525,10 @@ body {
     }
     
     .hero-gif {
-        width: 100px; /* Reduz o GIF do cabeçalho em telas menores */
+        width: 100px; 
+    }
+    .share-button {
+        max-width: 100%;
+        font-size: 0.9em;
     }
 }
