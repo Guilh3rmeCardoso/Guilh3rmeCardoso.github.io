@@ -1,0 +1,505 @@
+/* Configuração Global */
+:root {
+    --primary-color: #1DB954; /* Verde Spotify */
+    --accent-color: #1ED760; /* Verde mais claro para projeção */
+    --background-dark: #121212; /* Fundo Escuro */
+    --text-light: #FFFFFF;
+    --card-bg: #181818;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Header/Hero Section */
+.hero-section {
+    padding: 80px 5%;
+    background: linear-gradient(180deg, rgba(29, 185, 84, 0.3) 0%, var(--background-dark) 100%);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* ESTILO DO CONTADOR DE TEMPO */
+.timer-display {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(29, 185, 84, 0.1); 
+    border-radius: 8px;
+    letter-spacing: 1px;
+}
+
+.timer-display span {
+    color: var(--primary-color); 
+    font-size: 0.7em; 
+    font-weight: 400;
+    margin: 0 5px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.main-photo-placeholder img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #b3b3b3;
+}
+
+.play-button {
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 30px; /* Adiciona espaço para o GIF abaixo */
+}
+
+.play-button:hover {
+    background-color: #2de26e;
+}
+
+/* NOVO ESTILO PARA O GIF DO CABEÇALHO */
+.hero-gif-container {
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+.hero-gif {
+    width: 150px; /* Tamanho do GIF */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+/* FIM NOVO ESTILO */
+
+
+/* Year Section - Anos */
+.year-section {
+    padding: 60px 5%;
+    border-bottom: 1px solid #282828;
+}
+
+.year-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Base da grade de conteúdo */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.metric {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.metric:hover {
+    transform: translateY(-5px);
+}
+
+.metric h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.metric p {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.large-text {
+    font-size: 3em !important;
+}
+
+.large-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-top: 15px;
+}
+
+.highlight {
+    background-color: #282828;
+    border: 2px solid var(--primary-color);
+}
+
+.spotify-embed {
+    margin-top: 15px;
+}
+
+/* LAYOUT: AJUSTES DE COLUNA */
+
+/* Garante que o embed de 2022 ocupe 2 colunas */
+#year-2022 .spotify-card-2022 { 
+    grid-column: span 2 !important;
+}
+/* Garante que os embeds de 2023 ocupem 1 coluna */
+#year-2023 .spotify-card {
+    grid-column: span 1 !important;
+}
+
+
+/* --- ESTILO PARA A SEÇÃO DE JOGOS --- */
+
+.gaming-section {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+.gaming-section h2 {
+    color: #f0f0f0;
+}
+
+.game-card {
+    padding: 30px;
+    min-height: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: var(--text-light); 
+}
+
+.game-card .large-text {
+    font-size: 1em !important; 
+    font-weight: 400;
+    color: #bbb;
+    margin-top: 15px;
+}
+
+.game-logo-placeholder {
+    height: 120px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    /* Borda removida (de dashed para none) */
+    border: none;
+}
+
+.game-logo-placeholder img {
+    max-width: 90%; 
+    max-height: 90%;
+    object-fit: contain; 
+    border-radius: 4px; 
+}
+
+/* Cores temáticas */
+.lol-theme {
+    background: linear-gradient(135deg, #0A0A0A, #1d3239);
+    border-color: #03B0D2;
+}
+.rivals-theme {
+    background: linear-gradient(135deg, #300A0A, #4E1414);
+    border-color: #D20315;
+}
+.itt-theme {
+    background: linear-gradient(135deg, #103010, #3C5A3E);
+    border-color: #55D203;
+}
+
+/* --- ESTILO PARA A SEÇÃO DE PROJEÇÃO (GRÁFICO) --- */
+
+.projection-section {
+    background-color: #101010;
+}
+
+.projection-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.data-insight {
+    background-color: #282828;
+    padding: 15px;
+    border-left: 4px solid var(--accent-color);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.chart-area {
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    border-bottom: 2px solid #333;
+    gap: 10px;
+}
+
+.chart-bar {
+    flex-grow: 1;
+    min-width: 50px;
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    font-weight: 700;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 4px 4px 0 0;
+    transition: height 1s ease-out, background-color 0.5s ease;
+    opacity: 0.9;
+}
+
+.chart-bar:hover {
+    opacity: 1;
+}
+
+/* Cores e estilos de destaque */
+.chart-bar.current-year {
+    background-color: var(--text-light);
+    color: var(--background-dark);
+}
+
+.chart-bar.projected {
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    border-top: 2px dashed #000;
+}
+
+.chart-legend {
+    margin-top: 15px;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 0.9em;
+    font-style: italic;
+}
+/* FIM ESTILO GRÁFICO */
+
+/* --- ESTILO PARA A SEÇÃO DE CONSTELAÇÃO --- */
+.constellation-section {
+    /* Fundo bem escuro para simular o espaço */
+    background: #000005; 
+    padding: 80px 5%;
+}
+
+.constellation-section h2 {
+    color: #FFC300; /* Cor amarela/dourada para estrelas */
+    font-size: 2.8em;
+}
+
+.constellation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para info e canvas */
+    gap: 40px;
+    align-items: center;
+}
+
+.constellation-info {
+    padding: 30px;
+    background-color: rgba(24, 24, 24, 0.7); /* Fundo semi-transparente */
+    border-radius: var(--border-radius);
+}
+
+.constellation-info h3 {
+    color: #FFC300;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.constellation-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.constellation-info ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    font-style: italic;
+}
+
+.constellation-info .insight {
+    margin-top: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.canvas-container {
+    height: 400px; /* Altura do container para o Canvas */
+    border: 2px solid #FFC300; /* Borda sutil de constelação */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+#constellationCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* FIM ESTILO CONSTELAÇÃO */
+
+
+/* Galeria de Fotos */
+.photo-gallery-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.photo-gallery-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+@media (min-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}
+
+/* Footer (Conclusão) */
+.final-track {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: #000000;
+}
+
+.final-track h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* ESTILOS PARA O GIF NO RODAPÉ */
+.gif-container {
+    text-align: center; 
+    margin: 30px 0; 
+}
+
+.final-gif {
+    max-width: 100%; 
+    width: 250px; 
+    height: auto;
+    border-radius: 8px; 
+}
+
+.signature {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.date {
+    margin-top: 10px;
+    font-style: italic;
+    color: #a7a7a7;
+}
+
+/* --- EFEITO REVEAL ON SCROLL --- */
+
+.hidden-element {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show-element {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsividade (Para dispositivos menores) */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr; 
+    }
+    .constellation-grid {
+        grid-template-columns: 1fr; 
+    }
+    .hero-section h1, .year-section h2 {
+        font-size: 2em;
+    }
+    .timer-display, .hero-section p {
+        font-size: 1em;
+    }
+    .spotify-card, .game-card, #year-2022 .spotify-card-2022 {
+        grid-column: span 1 !important; 
+    }
+
+    .chart-bar {
+        font-size: 0.7em;
+        min-width: 40px;
+    }
+    
+    .hero-gif {
+        width: 100px; /* Reduz o GIF do cabeçalho em telas menores */
+    }
+}
