@@ -2,7 +2,7 @@
 // 1. LÓGICA DO CONTADOR DE TEMPO E SCROLL
 // ===============================================
 
-// *** CORRIGIDO: 4 anos antes de 02/11/2025 é 02/11/2021 ***
+// *** DATA DE INÍCIO CORRIGIDA: 02 de Novembro de 2021 ***
 const START_DATE = new Date('2021-11-02T00:00:00').getTime(); 
 
 function updateCountdown() {
@@ -28,7 +28,7 @@ function updateCountdown() {
 
     // Formatação da exibição
     document.getElementById('countdown-timer').innerHTML = 
-        `${years} <span>anos</span>, ${remainingDays} <span>dias</span>, ${remainingHours} <span>horas</span>, ${remainingMinutes} <span>minutos</span> e ${remainingSeconds} <span>segundos</span>`;
+        `${years} <span>anos</span> | ${remainingDays} <span>dias</span> | ${remainingHours} <span>horas</span> | ${remainingMinutes} <span>minutos</span> | ${remainingSeconds} <span>segundos</span>`;
 }
 
 // Atualiza a cada segundo
@@ -48,8 +48,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show-element');
-        } else {
-            // entry.target.classList.remove('show-element'); 
         }
     });
 }, {
@@ -62,7 +60,51 @@ hiddenElements.forEach(element => {
 
 
 // ===============================================
-// 2. LÓGICA DA ANIMAÇÃO DE CONSTELAÇÃO (CANVAS)
+// 2. LÓGICA DE CAPTURA E COMPARTILHAMENTO (html2canvas)
+// ===============================================
+
+function captureAndShare(elementId, fileName) {
+    const element = document.getElementById(elementId);
+    
+    // Adiciona uma pequena mensagem para o usuário
+    alert(`Preparando a imagem da seção "${fileName.replace(/_/g, ' ')}" para o Instagram! Assim que o download iniciar, volte aqui para a instrução final.`);
+
+    // O html2canvas fará a captura do elemento
+    html2canvas(element, {
+        scale: 2, // Aumenta a resolução da imagem
+        backgroundColor: '#121212', // Garante que o fundo seja escuro
+    }).then(canvas => {
+        // Converte o canvas em um Data URL (base64)
+        const image = canvas.toDataURL('image/png');
+
+        // Cria um link de download temporário
+        const a = document.createElement('a');
+        a.href = image;
+        a.download = `Wrapped_${fileName}.png`;
+
+        // Simula o clique para iniciar o download
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        // Instrução final
+        setTimeout(() => {
+             alert(
+                "✅ Download Concluído! \n\n" +
+                "1. Abra seu aplicativo do Instagram. \n" +
+                "2. Crie um novo Post ou Story. \n" +
+                "3. Selecione a imagem que você acabou de baixar (deve estar na sua galeria)."
+            );
+        }, 500);
+    }).catch(error => {
+        console.error('Erro ao capturar a seção:', error);
+        alert('Ocorreu um erro ao gerar a imagem. Verifique o console.');
+    });
+}
+
+
+// ===============================================
+// 3. LÓGICA DA ANIMAÇÃO DE CONSTELAÇÃO (CANVAS)
 // ===============================================
 
 const canvas = document.getElementById('constellationCanvas');
